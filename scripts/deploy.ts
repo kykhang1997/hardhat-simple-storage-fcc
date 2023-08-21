@@ -1,6 +1,6 @@
 //import
-const { ethers, run, network } = require('hardhat');
-const { verify } = require('./verify');
+import { ethers, run, network } from 'hardhat';
+import { verify } from './verify';
 require('dotenv').config();
 
 //async function main
@@ -14,7 +14,7 @@ async function main() {
 
 	if (network.config.chainId === 11155111 && process.env.ETHERSCAN_API_KEY) {
 		console.log('Waiting for block confirmations...');
-		await simpleStorage.deploymentTransaction().wait(10);
+		await simpleStorage.deploymentTransaction()?.wait(10);
 		await verify(simpleStorage.target, []);
 	}
 

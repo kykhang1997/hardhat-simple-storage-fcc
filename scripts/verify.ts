@@ -1,21 +1,21 @@
-const { run } = require('hardhat');
+import { Addressable } from 'ethers';
+import { run } from 'hardhat';
 
-const verify = async (contractAddress, args) => {
+export const verify = async (
+	contractAddress: string | Addressable,
+	args: any[]
+) => {
 	console.log('Verifying contract...');
 	try {
 		await run('verify:verify', {
 			address: contractAddress,
 			constructorArguments: args,
 		});
-	} catch (e) {
+	} catch (e: any) {
 		if (e.message.toLowerCase().includes('already verified')) {
 			console.log('Already Verified! ', e);
 		} else {
 			console.error('verify ', e);
 		}
 	}
-};
-
-module.exports = {
-	verify,
 };

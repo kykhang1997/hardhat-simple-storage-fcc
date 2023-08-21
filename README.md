@@ -5,17 +5,9 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 Try running some of the following tasks:
 
 ```shell
-yarn hardhat help
-yarn hardhat test
-REPORT_GAS=true yarn hardhat test
-yarn hardhat node
-yarn hardhat run scripts/deploy.js
+npx hardhat help
+npx hardhat test
+REPORT_GAS=true npx hardhat test
+npx hardhat node
+npx hardhat run scripts/deploy.ts
 ```
-
----
-
------ create one func hardhat ----
-folder tasks
-
------ Check console hardhat ------
-yarn hardhat console --network xxx
